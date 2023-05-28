@@ -16,13 +16,15 @@ class HomePageTest(TestCase):
 		request = HttpRequest() 
 		response = home_page(request)
 
+		self.assertTrue(response.status_code, 200)
+		
 		html = response.content.decode('utf8')
 
 		self.assertTrue(html.startswith('<html>'))
 		self.assertIn("<title>To-Do lists</title>", html)
 		self.assertTrue(html.endswith('</html>'))
 
-		
+
 
 
 # class SmokeTest(TestCase):
