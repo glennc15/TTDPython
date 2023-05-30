@@ -14,6 +14,13 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 
+# from django.urls import path
+
+# urlpatterns = [
+#     path('admin/', admin.site.urls),
+# ]
+
+
 # from django.conf.urls import url 
 
 # the book's code is deprecated. Can update to this but it's recommended to used path instead:
@@ -31,9 +38,7 @@ from lists import views
 
 urlpatterns = [
     path('', views.home_page, name='home'),
+    path('lists/the-only-list-in-the-world/', views.view_list, name='view_list'),
 ]
 
 
-# urlpatterns = [
-#     path('admin/', admin.site.urls),
-# ]
