@@ -2,6 +2,7 @@ from django.shortcuts import redirect, render
 from django.core.exceptions import ValidationError
 # from django.http import HttpResponse
 # from django.shortcuts import render
+from lists.forms import ItemForm
 from lists.models import Item, List
 
 # Create your views here.
@@ -11,7 +12,7 @@ def home_page(request):
 		# return redirect('/lists/the-only-list-in-the-world/')
 		# # return redirect('/')
 
-	return render(request, 'home.html')
+	return render(request, 'home.html', {'form': ItemForm()})
 
 
 def view_list(request, list_id):
