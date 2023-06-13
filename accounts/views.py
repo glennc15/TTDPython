@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.core.mail import send_mail
 from django.contrib import auth, messages 
 from django.urls import reverse 
+from django.contrib.auth import logout
 
 from accounts.models import Token
 # Create your views here.
@@ -40,3 +41,13 @@ def login(request):
 		auth.login(request, user)
 
 	return redirect('/')
+
+
+
+def logout_user(request):
+	email = None 
+	logout(request)
+
+	return redirect('/')
+
+

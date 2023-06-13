@@ -39,6 +39,7 @@ from accounts import views
 urlpatterns = [
     path('send_login_email', views.send_login_email, name='send_login_email'),
     path('login', views.login, name='login'),
+    path('logout', views.logout_user, name='logout')
 
     # path('new', views.new_list, name='new_list'),
     # path('<int:list_id>/', views.view_list, name='view_list'),
